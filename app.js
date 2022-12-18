@@ -37,6 +37,7 @@ app.get("/", (req, res) => {
 </br></br>
 /orders >post,get </br>
 /orders/:id > put, del </br>
+/orders/:email > get </br>
     </p>
     `);
 });

@@ -8,6 +8,12 @@ exports.postOrdersInfo = async (userData) => {
   const result = await ordersInfoSchema.create(userData);
   return { result };
 };
+exports.getUserByMailInfo = async (email) => {
+  const query = { email };
+  console.log(query);
+  const result = await ordersInfoSchema.findOne(query);
+  return { result };
+};
 exports.updateOrderInfo = async (id, userData) => {
   const query = { _id: ObjectId(id) };
   const result = await ordersInfoSchema.updateOne(query, userData);

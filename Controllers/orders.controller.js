@@ -3,6 +3,7 @@ const {
   postOrdersInfo,
   updateOrderInfo,
   deleteOrdersInfo,
+  getUserByMailInfo,
 } = require("../Services/orders.service");
 
 exports.getOrders = async (req, res, next) => {
@@ -26,6 +27,23 @@ exports.postOrders = async (req, res, next) => {
   try {
     const orders = req.body;
     const result = await postOrdersInfo(orders);
+    res.status(200).json({
+      status: "success",
+      message: "Orders post successfully",
+      data: result,
+    });
+  } catch (error) {
+    res.status(400).json({
+      status: "error",
+      message: "Can't post Orders an error occurred",
+      error: error.message,
+    });
+  }
+};
+exports.getUserByMail = async (req, res, next) => {
+  try {
+    const email = req.params.email;
+    const result = await getUserByMailInfo(email);
     res.status(200).json({
       status: "success",
       message: "Orders post successfully",

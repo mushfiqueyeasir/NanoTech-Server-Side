@@ -11,6 +11,6 @@ router
   .route("/:id")
   .put(ordersController.updateSingleOrder)
   .delete(ordersController.deleteSingleOrder);
-/*router.route("/admin/:id").delete(ordersController.deleteSingleParts); */
+router.route("/:email").get(ordersController.getUserByMail);
 
 module.exports = router;

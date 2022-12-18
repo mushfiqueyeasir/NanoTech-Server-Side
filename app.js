@@ -18,6 +18,20 @@ app.use("/users", usersRoute);
 app.get("/", (req, res) => {
   res.send(`
     <h1> Parts App server is running </h1>
+    <p>    
+/parts >get, post </br>
+/parts/:id >get,put </br>
+/parts/admin/:id > del </br>
+
+</br></br>
+/reviews > post, get,  </br>
+/reviews/:id >get, </br>
+
+</br></br>
+/users/:email > put, get </br>
+/users > get </br>
+/users/admin/:email > put,get,del </br>
+    </p>
     `);
 });
 

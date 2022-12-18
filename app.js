@@ -10,10 +10,12 @@ app.use(express.json());
 const partsRoute = require("./Routes/parts.route");
 const reviewRoute = require("./Routes/reviews.route");
 const usersRoute = require("./Routes/users.route");
+const ordersRoute = require("./Routes/orders.route");
 
 app.use("/parts", partsRoute);
 app.use("/reviews", reviewRoute);
 app.use("/users", usersRoute);
+app.use("/orders", ordersRoute);
 
 app.get("/", (req, res) => {
   res.send(`
@@ -31,6 +33,10 @@ app.get("/", (req, res) => {
 /users/:email > put, get </br>
 /users > get </br>
 /users/admin/:email > put,get,del </br>
+
+</br></br>
+/orders >post,get </br>
+/orders/:id > put, del </br>
     </p>
     `);
 });

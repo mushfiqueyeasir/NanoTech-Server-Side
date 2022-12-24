@@ -33,7 +33,7 @@ exports.postReviews = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "error",
-      message: "Can't get Task an error occurred",
+      message: "Can't post review an error occurred",
       error: error.message,
     });
   }
@@ -52,7 +52,7 @@ exports.getSingleReview = async (req, res, next) => {
   } catch (error) {
     res.status(400).json({
       status: "error",
-      message: "Can't get Task an error occurred",
+      message: "Can't get review an error occurred",
       error: error.message,
     });
   }

@@ -6,16 +6,16 @@ exports.getAllUsersInfo = async (email) => {
 };
 exports.getUserInfo = async (email) => {
   const result = await usersInfoSchema.findOne({ email });
-  return { result };
+  return result;
 };
 exports.postUsersInfo = async (userData) => {
   const result = await usersInfoSchema.create(email, userData);
-  return { result };
+  return result;
 };
 exports.updateUsersInfo = async (email, userData) => {
   const query = { email };
   const result = await usersInfoSchema.updateOne(query, userData);
-  return { result };
+  return result;
 };
 
 //admin section
@@ -29,10 +29,10 @@ exports.makeAdminInfo = async (email) => {
   const query = { email };
   const updateData = { role: "admin" };
   const result = await usersInfoSchema.updateOne(query, updateData);
-  return { result };
+  return result;
 };
 exports.deleteAdminInfo = async (id) => {
   const query = { _id: ObjectId(id) };
   const result = await usersInfoSchema.deleteOne(query);
-  return { result };
+  return result;
 };

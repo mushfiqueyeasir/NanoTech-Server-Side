@@ -11,11 +11,13 @@ const partsRoute = require("./Routes/parts.route");
 const reviewRoute = require("./Routes/reviews.route");
 const usersRoute = require("./Routes/users.route");
 const ordersRoute = require("./Routes/orders.route");
+const paymentRoute = require("./Routes/payment.route");
 
 app.use("/parts", partsRoute);
 app.use("/reviews", reviewRoute);
 app.use("/users", usersRoute);
 app.use("/orders", ordersRoute);
+app.use("/create-payment-intent", paymentRoute);
 
 app.get("/", (req, res) => {
   res.send(`
